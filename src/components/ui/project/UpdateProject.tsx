@@ -19,7 +19,7 @@ const UpdateProject = ({ id }: any) => {
 
   useEffect(() => {
     const fetchMember = async () => {
-      const res = await fetch(`http://localhost:5000/projects/${id}`);
+      const res = await fetch(`https://portfolio-nextjs-server.vercel.app/projects/${id}`);
       const data = await res.json();
       setMember(data);
     };
@@ -32,7 +32,7 @@ const UpdateProject = ({ id }: any) => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const res = await fetch(`http://localhost:5000/projects/update/${id}`, {
+    const res = await fetch(`https://portfolio-nextjs-server.vercel.app/projects/update/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

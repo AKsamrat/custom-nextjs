@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Projects = async () => {
   // const router = useRouter();
 
-  const res = await fetch("http://localhost:5000/projects", { cache: "no-store" }); // SSR
+  const res = await fetch("https://portfolio-nextjs-server.vercel.app/projects", { cache: "no-store" }); // SSR
   const blogs = await res.json();
   console.log("project data", blogs)
   return (
@@ -15,7 +15,7 @@ const Projects = async () => {
       <hr />
       <div className='text-end mt-3'>
         <Link href="/dashboard/projects/create">
-          <button className='px-3 py-1 border-2 bg-[#F86F03] rounded-xl '>Create Projects</button>
+          <button className='px-3 py-1 border-2 bg-[#F86F03] rounded-xl font-semibold '>Create Projects</button>
         </Link>
       </div>
       <div className="overflow-x-auto mx-auto mt-3">
@@ -33,9 +33,13 @@ const Projects = async () => {
             {blogs?.map((item: Blog) => (
               <tr key={item._id} className="hover:bg-gray-100">
                 {/* <td className="p-3 border-b">{item.id}</td> */}
-                <td className="p-3 border-b">{item.title}</td>
+                <td className="p-3 border-b">{item?.title.length > 30
+                  ? item?.title.slice(0, 15) + "..."
+                  : item?.title}</td>
                 <td className="p-3 border-b">{item.category}</td>
-                <td className="p-3 border-b">{item.description}</td>
+                <td className="p-3 border-b">{item?.description.length > 30
+                  ? item?.description.slice(0, 20) + "..."
+                  : item?.description}</td>
                 <td>
                   <Link href={`/dashboard/projects/update/${item._id}`}>
                     <button className='px-3 py-1 border border-[#F86F03] rounded-xl bg-slate-300'>Update</button>

@@ -4,6 +4,7 @@ import React from 'react';
 import { Slide, Zoom } from 'react-awesome-reveal';
 import img from "../../../public/portfolio.jpg"
 
+
 const AboutMe = () => {
   return (
     <div id="about" className="exo-2 bg-[#170550] py-16">
@@ -15,7 +16,7 @@ const AboutMe = () => {
         </div>
         <div className="pt-16 flex flex-col lg:flex-row justify-center items-center gap-20 ">
           <div className="flex-1 h-[500px] flex justify-end">
-            <Zoom direction="" duration={2000}>
+            <Zoom duration={2000}>
               <Image
                 className="h-full rounded-full"
                 src={img}

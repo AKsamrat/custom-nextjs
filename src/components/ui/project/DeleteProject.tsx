@@ -27,7 +27,7 @@ const DeleteProject = ({ id }: any) => {
   const handleDelete = async () => {
     if (!id) return;
     try {
-      const response = await fetch(`http://localhost:5000/projects/delete/${id}`, {
+      const response = await fetch(`https://portfolio-nextjs-server.vercel.app/projects/delete/${id}`, {
         method: "DELETE",
       })
       console.log(response)

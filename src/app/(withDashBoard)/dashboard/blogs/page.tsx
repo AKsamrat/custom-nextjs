@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Blogs = async () => {
   // const router = useRouter();
 
-  const res = await fetch("http://localhost:5000/blogs", { cache: "no-store" }); // SSR
+  const res = await fetch("https://portfolio-nextjs-server.vercel.app/blogs", { cache: "no-store" }); // SSR
   const blogs = await res.json();
   console.log("blog data", blogs)
   return (
@@ -15,7 +15,7 @@ const Blogs = async () => {
       <hr />
       <div className='text-end mt-3'>
         <Link href="/dashboard/create">
-          <button className='px-3 py-1 border-2 bg-[#F86F03] rounded-xl '>Create Blog</button>
+          <button className='px-3 py-1 border-2 bg-[#F86F03] rounded-xl font-semibold '>Create Blog</button>
         </Link>
       </div>
       <div className="overflow-x-auto mx-auto mt-3">
@@ -25,7 +25,7 @@ const Blogs = async () => {
               {/* <th className="p-3 text-left border-b">ID</th> */}
               <th className="p-3 text-left border-b">Title</th>
               <th className="p-3 text-left border-b">Category</th>
-              <th className="p-3 text-left border-b">Description</th>
+              <th className="p-3 text-left border-b">Published</th>
               <th className="p-3 text-left border-b">Actions</th>
             </tr>
           </thead>

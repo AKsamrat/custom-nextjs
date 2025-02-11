@@ -20,7 +20,7 @@ const ProjectForm = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const res = await fetch(`http://localhost:5000/projects/create`, {
+    const res = await fetch(`https://portfolio-nextjs-server.vercel.app/projects/create`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",

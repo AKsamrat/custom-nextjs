@@ -19,7 +19,7 @@ const UpdateMember = ({ params }: any) => {
 
   useEffect(() => {
     const fetchMember = async () => {
-      const res = await fetch(`http://localhost:5000/blogs/${id}`);
+      const res = await fetch(`https://portfolio-nextjs-server.vercel.app/blogs/${id}`);
       const data = await res.json();
       setMember(data);
     };
@@ -32,7 +32,7 @@ const UpdateMember = ({ params }: any) => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const res = await fetch(`http://localhost:5000/blogs/update/${id}`, {
+    const res = await fetch(`https://portfolio-nextjs-server.vercel.app/blogs/update/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

@@ -26,7 +26,7 @@ const DeleteBlog = ({ params }: any) => {
   const handleDelete = async () => {
     if (!id) return;
     try {
-      const response = await fetch(`http://localhost:5000/blogs/delete/${id}`, {
+      const response = await fetch(`https://portfolio-nextjs-server.vercel.app/blogs/delete/${id}`, {
         method: "DELETE",
       })
       console.log(response)

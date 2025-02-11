@@ -2,6 +2,11 @@
 import React from 'react';
 import './Featureds.css';
 import { Slide } from 'react-awesome-reveal';
+import asset from '../../../public/asset.jpg'
+import sketch from '../../../public/sketch.png'
+import expert from '../../../public/logo1.jpg'
+import Image from 'next/image';
+
 const Projects = () => {
   return (
     <div
@@ -16,7 +21,7 @@ const Projects = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto pt-6">
         <Slide direction="left" duration={1000}>
           <div className="p-6 border-2 rounded-xl bg-[#fffffffe] drop-shadow-lg shadow-lg shadow-purple-500 hover:scale-105 overflow-hidden  duration-700">
-            <img className="w-40" src="asset.jpg" alt="" />
+            <Image width={40} quality={100} className="w-40" src={asset} alt="asset" />
             <div className="w-full pb-4">
               <p className="text-3xl font-semibold py-3">Asset Management</p>
               <p className="text-[18px] text-slate-500">
@@ -42,7 +47,7 @@ const Projects = () => {
         </Slide>
         <Slide direction="up" duration={1000}>
           <div className="p-6 border-2 rounded-xl bg-[#fffffffe] drop-shadow-lg shadow-lg shadow-purple-500 hover:scale-105 overflow-hidden  duration-700 h-full">
-            <img className="w-40" src="logo1.jpg" alt="" />
+            <Image className="w-40" quality={100} width={40} src={expert} alt="" />
             <div className="w-full pb-4">
               <p className="text-3xl font-semibold py-3">Expert Hunter</p>
               <p className="text-[18px] text-slate-500">
@@ -68,7 +73,7 @@ const Projects = () => {
         </Slide>
         <Slide direction="right" duration={1000}>
           <div className="p-6 border-2 rounded-xl bg-[#fffffffe] drop-shadow-lg shadow-lg shadow-purple-500 hover:scale-105 overflow-hidden  duration-700 ">
-            <img className="w-40" src="sketch.png" alt="" />
+            <Image className="w-40" quality={100} src={sketch} width={40} alt="sketch" />
             <div className="w-full pb-4">
               <p className="text-3xl font-semibold py-3">Sketch craft</p>
               <p className="text-[18px] text-slate-500">

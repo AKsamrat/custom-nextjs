@@ -19,7 +19,7 @@ const BlogForm = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const res = await fetch(`http://localhost:5000/blogs/create`, {
+    const res = await fetch(`https://portfolio-nextjs-server.vercel.app/blogs/create`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",

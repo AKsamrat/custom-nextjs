@@ -3,7 +3,7 @@ import { Blog } from '@/types';
 import React from 'react';
 
 const ProjectPage = async () => {
-  const res = await fetch("http://localhost:5000/projects", { cache: "no-store" }); // SSR
+  const res = await fetch("https://portfolio-nextjs-server.vercel.app/projects", { cache: "no-store" }); // SSR
   const blogs = await res.json();
   console.log("project data", blogs)
   return (

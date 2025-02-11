@@ -9,7 +9,7 @@ import { FaCalendar } from "react-icons/fa";
 const BlogDetails = async ({ params }: any) => {
   const { id }: any = params;
   // console.log(id)
-  const res = await fetch(`http://localhost:5000/blogs/${id}`);
+  const res = await fetch(`https://portfolio-nextjs-server.vercel.app/blogs/${id}`);
   const blog: Blog = await res.json();
   // console.log(blog)
   return (
