@@ -1,4 +1,4 @@
-## <code style="color:green"> Project Name: wiseBook</code>
+## <code style="color:green"> Project Name: Portfolio</code>
 
 
 ### <code style="color:aqua">Features  :</code>
@@ -7,8 +7,8 @@
 - I covered all CRUD operation in this project(like creat,get all product,get single product, update a product, delete a product)
 - Two different database collection implemented in this project(products and orders)
 - Use some validation like email, enum type category 
-- Use some query middleware
-- Zod Validation has been implemented in this project.
+
+
 
 ## <code style="color:green"> Project setup</code>
 
