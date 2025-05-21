@@ -14,11 +14,11 @@ const LatestBlogCard = ({ blog }: { blog: Blog }) => {
     >
       <figure>
         <Image
-          src={`${blog?.blog_image}`}
-          width={600}
+          src={`${blog?.image}`}
+          width={200}
           height={100}
           alt="blog image"
-          className="h-96 w-full object-cover"
+          className="h-64 w-full object-cover"
         />
       </figure>
       <div className="p-5">

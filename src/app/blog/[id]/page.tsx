@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Blog } from "@/types";
+// import { Blog } from "@/types";
 import Image from "next/image";
 import { AiFillLike } from "react-icons/ai";
 import { FaCalendar } from "react-icons/fa";
@@ -9,16 +9,16 @@ import { FaCalendar } from "react-icons/fa";
 const BlogDetails = async ({ params }: any) => {
   const { id }: any = params;
   // console.log(id)
-  const res = await fetch(`https://portfolio-nextjs-server.vercel.app/blogs/${id}`);
-  const blog: Blog = await res.json();
-  // console.log(blog)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/blog/${id}`);
+  const blog: any = await res.json();
+  console.log(blog)
   return (
     <div className="w-2/3 bg-white shadow-lg rounded-lg mx-auto p-6 mt-6">
       <p className="flex items-center justify-center mx-auto text-teal-500 bg-teal-100 w-fit px-3 py-1 rounded-full">
         <FaCalendar className="mr-2" />
-        {blog.publish_date}
+        {blog?.data?.createdAt}
       </p>
-      <h2 className="text-center text-4xl font-semibold my-5">{blog.title}</h2>
+      <h2 className="text-center text-4xl font-semibold my-5">{blog?.data?.title}</h2>
       <div className="flex items-center justify-center bg-gray-100 mb-5 py-2 rounded-lg gap-2">
         {/* <Image
           src="https://cdn-icons-png.flaticon.com/512/219/219986.png"
@@ -27,24 +27,24 @@ const BlogDetails = async ({ params }: any) => {
           alt="author image"
         /> */}
 
-        <span className="text-lg font-medium">{blog.author_name}</span>
+        <span className="text-lg font-medium"></span>
       </div>
       <figure className="mb-5">
         <Image
-          src={`${blog?.blog_image}`}
+          src={`${blog?.data?.image}`}
           width={600}
           height={100}
           alt="blog image"
-          className="rounded-lg w-full object-cover"
+          className="h-96 w-full object-cover"
         />
       </figure>
       <div className="text-gray-700 text-lg leading-relaxed">
-        <p className="text-justify text-gray-500">{blog.description}</p>
+        <p className="text-justify text-gray-500">{blog?.data?.description}</p>
       </div>
       <div className="flex justify-between items-center mt-5">
         <div className="flex items-center text-xl text-gray-600">
           <AiFillLike className="text-teal-500 mr-2" />
-          <span className="mr-1">{blog.category}</span>
+          <span className="mr-1">{blog?.data?.category}</span>
           Likes
         </div>
       </div>

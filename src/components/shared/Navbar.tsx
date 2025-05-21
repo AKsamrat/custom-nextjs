@@ -19,7 +19,7 @@ export default function Navbar({ session }: { session: UserProps | null }) {
     { href: "/", label: "Home" },
     { href: "/project", label: "Project" },
     { href: "/blog", label: "Blogs" },
-    { href: "/contact", label: "Contact" },
+
 
   ];
 
@@ -30,7 +30,7 @@ export default function Navbar({ session }: { session: UserProps | null }) {
 
 
   return (
-    <nav className="bg-white shadow-md mt-2">
+    <nav className="bg-[#31065A] shadow-md mt-2 text-white z-10 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 ">
         <div className="flex justify-between items-center h-12">
           {/* Logo */}
@@ -46,74 +46,29 @@ export default function Navbar({ session }: { session: UserProps | null }) {
                 href={href}
                 className={`${pathname === href
                   ? "text-[#F86F03] font-bold"
-                  : "text-gray-700 hover:text-6eal-700"
+                  : "text-white hover:text-6eal-700"
                   }`}
               >
                 {label}
               </Link>
             ))}
-            {
-              session?.user ? (
 
-                <Link
-                  key={"/dashboard"}
-                  href={"/dashboard"}
-                >
-                  Dashboard
-                </Link>
-              ) : ""
-            }
           </div>
 
           {/* Profile Dropdown */}
           <div className="relative hidden md:flex items-center space-x-4">
-            {
-              session?.user ? (
-                <button
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="flex items-center space-x-2 focus:outline-none"
-                >
-                  <Image
-                    src={
-                      session?.user?.image
-                        ? session?.user?.image
-                        : profile
-                    }
-                    // src={session?.user?.image}
-                    alt="Profile"
-                    width={10}
-                    height={10}
-                    quality={100}
-                    className="h-10 w-10 rounded-full border-2 border-gray-300"
-                  />
 
-                </button>
-              ) : (
-                <Link
-                  key={"/login"}
-                  href={"/login"}
-                  className="border border-[#F86F03] text-[#F86F03] px-5 py-2 rounded-full hover:bg-[#F86F03] hover:text-black transition duration-200"
-                >
-                  Login
-                </Link>
-              )
-            }
+            <Link
+              key={"/login"}
+              href={"/contact"}
+              className="border border-[#F86F03] text-[#F86F03] px-5 py-2 rounded-full hover:bg-[#F86F03] hover:text-black transition duration-200"
+            >
+              Hire Me
+            </Link>
 
 
             {/* Dropdown Menu */}
-            {dropdownOpen && (
-              <div className="absolute right-0 top-6 mt-4 w-48 bg-white shadow-md rounded-lg py-2">
-                <p className="px-4 py-2 text-gray-700 font-semibold">{session?.user?.name}</p>
-                <hr />
-                <button
-                  onClick={handleLogout}
-                  className="flex items-center w-full px-4 py-2 text-gray-700 hover:bg-gray-100"
-                >
-                  <LogOut size={18} className="mr-2" />
-                  Logout
-                </button>
-              </div>
-            )}
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -142,17 +97,7 @@ export default function Navbar({ session }: { session: UserProps | null }) {
                 {label}
               </Link>
             ))}
-            {
-              session?.user ? (
 
-                <Link
-                  key={"/dashboard"}
-                  href={"/dashboard"}
-                >
-                  Dashboard
-                </Link>
-              ) : ""
-            }
           </div>
 
           {/* Profile & Dropdown in Mobile Menu */}

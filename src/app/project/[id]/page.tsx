@@ -8,7 +8,7 @@ import { FaCalendar } from 'react-icons/fa';
 
 const DetailsPage = async ({ params }: any) => {
   const { id }: any = params;
-  const res = await fetch(`https://portfolio-nextjs-server.vercel.app/projects/${id}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/project/${id}`);
   const blog: Blog = await res.json();
 
   console.log(blog);
@@ -31,7 +31,7 @@ const DetailsPage = async ({ params }: any) => {
       </div>
       <figure className="mb-5">
         <Image
-          src={`${blog?.blog_image}`}
+          src={`${blog?.image}`}
           width={600}
           height={100}
           alt="blog image"

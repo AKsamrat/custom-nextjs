@@ -57,9 +57,9 @@ const Heros = () => {
                     loop={0}
                     typeSpeed={75}
                     words={[
-                      'Jr. MERN Stack Developer',
-                      'Frontend Developer',
-                      'Backend Developer',
+                      'Jr.FULL Stack Developer',
+                      'MERN Developer',
+                      'PostGreSQL Developer',
                     ]}
                   />
                 </span>

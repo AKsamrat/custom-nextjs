@@ -1,11 +1,11 @@
 export interface Blog {
   _id?: string;
   title: string;
-  live_link?: string;
+  link?: string;
   description: string;
   publish_date: string;
   author_name?: string;
-  blog_image?: string | null;
+  image?: string | null;
   category: string;
 }
 export interface UserData {
@@ -32,3 +32,8 @@ export type AnimationProps = {
   delay?: number;
   direction?: "left" | "right" | "up" | "down";
 };
+export type Skills = {
+  _id: string;
+  title: string;
+  image: string;
+}
