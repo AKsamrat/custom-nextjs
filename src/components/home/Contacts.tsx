@@ -1,6 +1,7 @@
 'use client';
 
 import { AnimationProps } from '@/types';
+import Image from 'next/image';
 import React from 'react';
 import { Fade, Zoom } from 'react-awesome-reveal';
 import { Roll } from 'react-awesome-reveal';
@@ -31,16 +32,23 @@ const Contacts = () => {
     delay: 500,
   };
   return (
-    <div id="contact" className="exo-2 bg-[#170550]">
-      <div className=" max-w-7xl mx-auto  py-16">
+    <div id="contact" className="exo-2 relative ">
+      <Image
+        src="/section.svg"
+        alt="contact"
+        width={1572}
+        height={795}
+        className="absolute top-0 -z-10"
+      />
+      <div className=" max-w-6xl mx-auto  py-16 ">
         <div className="flex justify-center items-center pb-6 ">
-          <p className="exo-2 border-b-2 w-64 text-[40px] text-center font-semibold text-white">
+          <p className="exo-2 border-b-2 w-64 text-[40px] text-center font-semibold text-white dark:text-gray-700">
             Get in <span className="text-[#F86F03]"> Touch</span>
           </p>
         </div>
         <section className="py-6 dark:bg-gray-100 dark:text-gray-900">
           <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x ">
-            <div className="py-6 md:py-0 md:px-6 *:text-white">
+            <div className="py-6 md:py-0 md:px-6 *:text-white *:dark:text-gray-700">
               <h1 className="text-4xl font-bold">Contact</h1>
               <p className="pt-2 pb-4">
                 Fill in the form to start a conversation
@@ -111,38 +119,38 @@ const Contacts = () => {
             </div>
             <form
 
-              className="flex flex-col py-6 space-y-6  md:py-0 md:px-6"
+              className="flex flex-col py-6 space-y-6  md:py-0 md:px-6 *:dark:text-gray-700"
             >
               <Zoom duration={1000} delay={300}>
-                <label className="block">
-                  <span className="mb-1 text-[18px] text-white">Full name</span>
+                <label className="block ">
+                  <span className="mb-1 text-[18px] text-white dark:text-gray-700 ">Full name</span>
                   <input
                     name="user_name"
                     type="text"
                     placeholder="Leroy Jenkins"
-                    className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 bg-[#43366A] py-3 pl-2"
+                    className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 bg-[#43366A] dark:bg-gray-200 py-3 pl-2"
                   />
                 </label>
               </Zoom>
               <Zoom duration={1000} direction="right" delay={400}>
                 <label className="block">
-                  <span className="mb-1 text-[18px] text-white">Email address</span>
+                  <span className="mb-1 text-[18px] text-white dark:text-gray-700">Email address</span>
                   <input
                     name="user_email"
                     type="email"
                     placeholder="leroy@jenkins.com"
-                    className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100 py-3 pl-2 bg-[#43366A]"
+                    className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-200 py-3 pl-2 bg-[#43366A] "
                     data-temp-mail-org="0"
                   />
                 </label>
               </Zoom>
               <Zoom duration={1000} direction="right" delay={700}>
                 <label className="block">
-                  <span className="mb-1 text-[18px] text-white">Message</span>
+                  <span className="mb-1 text-[18px] text-white dark:text-gray-700">Message</span>
                   <textarea
                     name="message"
                     rows={6}
-                    className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100 py-3 pl-2 bg-[#43366A]"
+                    className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-200 py-3 pl-2 bg-[#43366A]"
                   ></textarea>
                 </label>
               </Zoom>

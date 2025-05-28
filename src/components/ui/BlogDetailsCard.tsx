@@ -23,7 +23,7 @@ const BlogDetailsCard = ({ blog }: { blog: Blog }) => {
       </div>
       <figure className="mb-5">
         <Image
-          src={`${blog?.blog_image}`}
+          src={`${blog?.image}`}
           width={600}
           height={100}
           alt="blog image"

@@ -8,7 +8,7 @@ import React from 'react';
 
 const page = () => {
   return (
-    <div>
+    <div className='dark:text-black'>
       <Heros></Heros>
       <AboutMe></AboutMe>
       <Skill></Skill>

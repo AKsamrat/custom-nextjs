@@ -8,10 +8,10 @@ import './AboutMe.css'; // for animated border
 
 const AboutMe = () => {
   return (
-    <div id="about" className="exo-2 bg-[#170550] py-16">
-      <div className="max-w-7xl mx-auto">
+    <div id="about" className="exo-2  py-16">
+      <div className="max-w-6xl mx-auto px-2">
         <div className="flex justify-center items-center">
-          <p className="exo-2 border-b-2 w-48 text-[40px] text-center font-semibold text-white">
+          <p className="exo-2 border-b-2 w-48 text-[40px] text-center font-semibold text-white dark:text-gray-700">
             About <span className="text-[#F86F03]">Me</span>
           </p>
         </div>
@@ -38,7 +38,7 @@ const AboutMe = () => {
           {/* Text Section */}
           <div className="flex-1 mt-10 lg:mt-0">
             <Slide direction="right" duration={1800}>
-              <p className="text-3xl font-semibold text-white">
+              <p className="text-3xl font-semibold text-white dark:text-gray-700">
                 Jr. Full Stack Developer
               </p>
               <p className="text-xl pb-5 text-[#F86F03]">MERN & PostGreSQL</p>

@@ -1,53 +1,84 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Blog } from '@/types';
+
 import Image from 'next/image';
 import { AiFillLike } from 'react-icons/ai';
 import { FaCalendar } from 'react-icons/fa';
 
+// Format date helper
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
 
 const DetailsPage = async ({ params }: any) => {
-  const { id }: any = params;
+  const { id } = params;
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/project/${id}`);
-  const blog: Blog = await res.json();
+  const pBlog = await res.json();
+  const blog: any = pBlog.data;
 
-  console.log(blog);
   return (
-    <div className="w-2/3 bg-white shadow-lg rounded-lg mx-auto p-6 mt-6">
-      <p className="flex items-center justify-center mx-auto text-teal-500 bg-teal-100 w-fit px-3 py-1 rounded-full">
-        <FaCalendar className="mr-2" />
-        {blog.publish_date}
-      </p>
-      <h2 className="text-center text-4xl font-semibold my-5">{blog.title}</h2>
-      <div className="flex items-center justify-center bg-gray-100 mb-5 py-2 rounded-lg gap-2">
+    <div className="max-w-4xl mx-auto p-6 mt-10 bg-white rounded-3xl shadow-xl">
+      <div className="mb-6">
+        <img
+          src={blog.image}
+          alt="Blog"
+          className="w-full h-[400px] object-cover rounded-2xl shadow-md"
+        />
+      </div>
+
+
+      {/* Title */}
+      <h1 className="text-4xl font-bold text-center text-gray-800 mb-6">
+        {blog.title}
+      </h1>
+
+      {/* Author */}
+      <div className="flex justify-center items-center gap-3 mb-6 bg-gray-100 py-3 px-5 rounded-xl">
         <Image
           src="https://cdn-icons-png.flaticon.com/512/219/219986.png"
-          width={30}
-          height={30}
-          alt="author image"
+          width={32}
+          height={32}
+          alt="author"
+          className="rounded-full"
         />
+        <p className="text-lg font-semibold text-gray-700">{blog.author_name}</p>
+      </div>
 
-        <span className="text-lg font-medium">{blog.author_name}</span>
+      {/* Blog Image */}
+      {/* Date Badge */}
+      <div className="flex justify-center mb-4">
+        <span className="flex items-center gap-2 text-teal-600 bg-teal-100 px-4 py-1 rounded-full text-sm font-medium">
+          <FaCalendar />
+          {formatDate(blog.createdAt)}
+        </span>
       </div>
-      <figure className="mb-5">
-        <Image
-          src={`${blog?.image}`}
-          width={600}
-          height={100}
-          alt="blog image"
-          className="rounded-lg w-full object-cover"
-        />
-      </figure>
-      <div className="text-gray-700 text-lg leading-relaxed">
-        <p className="text-justify text-gray-500">{blog.description}</p>
+
+      {/* Description */}
+      <div className="text-gray-700 text-lg leading-relaxed mb-6">
+        <p className="text-justify">{blog.description}</p>
       </div>
-      <div className="flex justify-between items-center mt-5">
-        <div className="flex items-center text-xl text-gray-600">
-          <AiFillLike className="text-teal-500 mr-2" />
-          <span className="mr-1">{blog.category}</span>
-          Likes
+
+      {/* Tech Stack & Likes */}
+      <div className="grid sm:grid-cols-3 gap-4 text-gray-800 text-base">
+        <div className="flex items-center gap-2">
+          <AiFillLike className="text-teal-500" />
+          <span className="font-medium">Likes</span>
+        </div>
+        <div>
+          <span className="font-medium text-gray-700">Frontend:</span>{" "}
+          <span className="text-indigo-500">{blog?.frontEnd}</span>
+        </div>
+        <div>
+          <span className="font-medium text-gray-700">Backend:</span>{" "}
+          <span className="text-indigo-500">{blog?.backEnd}</span>
         </div>
       </div>
+      <a href={blog?.link} className=' text-teal-600 bg-teal-100 px-4 py-1 rounded-full text-sm font-medium' >Visit Site</a>
     </div>
   );
 };

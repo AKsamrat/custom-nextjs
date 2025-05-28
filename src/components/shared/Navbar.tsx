@@ -1,13 +1,14 @@
 "use client"
-import { useState } from "react";
-import { ChevronDown, LogOut, Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ChevronDown, LogOut, Menu, Moon, Sun, X } from "lucide-react";
 import Image from "next/image";
-import logo from "../../../public/AK.png"
+import logo from "../../../public/port_logo.png"
 import profile from "../../../public/Profile.png"
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { UserProps } from "@/types";
 import { signOut } from "next-auth/react";
+import { useDarkMode } from "./useDarkMode";
 
 export default function Navbar({ session }: { session: UserProps | null }) {
   const router = useRouter();
@@ -15,6 +16,17 @@ export default function Navbar({ session }: { session: UserProps | null }) {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const { isDark, toggleDarkMode } = useDarkMode();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/project", label: "Project" },
@@ -30,12 +42,12 @@ export default function Navbar({ session }: { session: UserProps | null }) {
 
 
   return (
-    <nav className="bg-[#31065A] shadow-md mt-2 text-white z-10 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 ">
+    <nav className={`sticky top-0 z-[70] transition-colors duration-300 py-2 dark:bg-white ${scrolled ? "bg-gray-900 shadow-md bg-opacity-85" : "bg-transparent"} `}>
+      <div className="max-w-6xl mx-auto  px-6  lg:px-2 dark:text-gray-900">
         <div className="flex justify-between items-center h-12">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Image src={logo} quality={100} alt="Logo" className="h-10 w-auto" />
+            <Image src={logo} quality={100} alt="Logo" className="h-5 w-36" />
           </div>
 
           {/* Desktop Menu */}
@@ -46,7 +58,7 @@ export default function Navbar({ session }: { session: UserProps | null }) {
                 href={href}
                 className={`${pathname === href
                   ? "text-[#F86F03] font-bold"
-                  : "text-white hover:text-6eal-700"
+                  : "text-white dark:text-gray-900 hover:text-6eal-700"
                   }`}
               >
                 {label}
@@ -55,20 +67,24 @@ export default function Navbar({ session }: { session: UserProps | null }) {
 
           </div>
 
-          {/* Profile Dropdown */}
-          <div className="relative hidden md:flex items-center space-x-4">
+          {/* Buttons */}
+          <div className="flex items-center gap-4">
+            {/* Dark Mode Button */}
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 rounded-full hover:bg-gray-700 transition"
+              aria-label="Toggle dark mode"
+            >
+              {isDark ? <Sun className="text-yellow-400" /> : <Moon className="text-white" />}
+            </button>
 
+            {/* Hire Me */}
             <Link
-              key={"/login"}
-              href={"/contact"}
-              className="border border-[#F86F03] text-[#F86F03] px-5 py-2 rounded-full hover:bg-[#F86F03] hover:text-black transition duration-200"
+              href="/contact"
+              className="border border-[#F86F03] text-[#F86F03] px-5 py-2 rounded-full hover:bg-[#F86F03] hover:text-black transition"
             >
               Hire Me
             </Link>
-
-
-            {/* Dropdown Menu */}
-
           </div>
 
           {/* Mobile Menu Button */}
