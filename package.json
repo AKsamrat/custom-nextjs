@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/js-cookie": "^3.0.6",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^12.12.1",
     "js-cookie": "^3.0.5",
     "lottie-react": "^2.4.1",

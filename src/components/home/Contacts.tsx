@@ -9,6 +9,7 @@ import { BsTwitterX } from 'react-icons/bs';
 import { CiFacebook } from 'react-icons/ci';
 import { TiSocialLinkedinCircular } from 'react-icons/ti';
 import { VscGithub } from 'react-icons/vsc';
+import emailjs from 'emailjs-com';
 
 const Contacts = () => {
   const rollAnimationProps: AnimationProps = {
@@ -31,6 +32,27 @@ const Contacts = () => {
     direction: "left",
     delay: 500,
   };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      'service_irjd2nu', 'template_ke6qytf',
+      e.currentTarget,
+      'OSmxKuqErUuwX3Iad'
+    )
+      .then((result) => {
+        console.log('Success:', result.text);
+        alert("Message sent successfully!");
+      })
+      .catch((error) => {
+        console.error('Error:', error.text);
+        alert("Failed to send message.");
+      });
+
+    e.currentTarget.reset();
+  };
+
   return (
     <div id="contact" className="exo-2 relative ">
       <Image
@@ -118,7 +140,7 @@ const Contacts = () => {
               </div>
             </div>
             <form
-
+              onSubmit={handleSubmit}
               className="flex flex-col py-6 space-y-6  md:py-0 md:px-6 *:dark:text-gray-700"
             >
               <Zoom duration={1000} delay={300}>
