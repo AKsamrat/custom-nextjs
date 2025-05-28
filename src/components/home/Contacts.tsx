@@ -3,7 +3,7 @@
 import { AnimationProps } from '@/types';
 import Image from 'next/image';
 import React from 'react';
-import { Fade, Zoom } from 'react-awesome-reveal';
+import { Fade, Slide } from 'react-awesome-reveal';
 import { Roll } from 'react-awesome-reveal';
 import { BsTwitterX } from 'react-icons/bs';
 import { CiFacebook } from 'react-icons/ci';
@@ -62,7 +62,7 @@ const Contacts = () => {
         height={795}
         className="absolute top-0 -z-10"
       />
-      <div className=" max-w-6xl mx-auto  py-16 ">
+      <div className=" max-w-6xl mx-auto  pb-16 ">
         <div className="flex justify-center items-center pb-6 ">
           <p className="exo-2 border-b-2 w-64 text-[40px] text-center font-semibold text-white dark:text-gray-700">
             Get in <span className="text-[#F86F03]"> Touch</span>
@@ -143,7 +143,7 @@ const Contacts = () => {
               onSubmit={handleSubmit}
               className="flex flex-col py-6 space-y-6  md:py-0 md:px-6 *:dark:text-gray-700"
             >
-              <Zoom duration={1000} delay={300}>
+              <Slide duration={1000} direction='right'>
                 <label className="block ">
                   <span className="mb-1 text-[18px] text-white dark:text-gray-700 ">Full name</span>
                   <input
@@ -153,8 +153,8 @@ const Contacts = () => {
                     className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 bg-[#43366A] dark:bg-gray-200 py-3 pl-2"
                   />
                 </label>
-              </Zoom>
-              <Zoom duration={1000} direction="right" delay={400}>
+              </Slide>
+              <Slide duration={1000} direction="right" >
                 <label className="block">
                   <span className="mb-1 text-[18px] text-white dark:text-gray-700">Email address</span>
                   <input
@@ -165,8 +165,8 @@ const Contacts = () => {
                     data-temp-mail-org="0"
                   />
                 </label>
-              </Zoom>
-              <Zoom duration={1000} direction="right" delay={700}>
+              </Slide>
+              <Slide duration={1000} direction="right" >
                 <label className="block">
                   <span className="mb-1 text-[18px] text-white dark:text-gray-700">Message</span>
                   <textarea
@@ -175,8 +175,8 @@ const Contacts = () => {
                     className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-200 py-3 pl-2 bg-[#43366A]"
                   ></textarea>
                 </label>
-              </Zoom>
-              <Zoom duration={1000} direction="right" delay={1000}>
+              </Slide>
+              <Slide duration={1000} direction="right" >
                 <button
                   type="submit"
                   className=" bg-[#F86F03] px-2 py-2 rounded-2xl font-semibold text-xl w-full "
@@ -184,7 +184,7 @@ const Contacts = () => {
                   {' '}
                   Submit
                 </button>
-              </Zoom>
+              </Slide>
             </form>
           </div>
         </section>
