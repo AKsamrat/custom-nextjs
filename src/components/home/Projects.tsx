@@ -45,9 +45,9 @@ const Projects = () => {
       id="projects"
       className="featured-item exo-2 bg-fixed bg-center bg-no-repeat bg-cover text-black py-16 "
     >
-      <div className='max-w-6xl mx-auto px-2'>
+      <div className='max-w-6xl mx-auto px-4 lg:px-6'>
         <div className="flex justify-center items-center  pb-6">
-          <p className="exo-2 border-b-2 w-60 text-[40px] text-center font-semibold">
+          <p className="exo-2 border-b-2 w-52 lg:w-60 text-[32px] lg:text-[40px] text-center font-semibold">
             My <span className="text-[#F86F03]"> Projects</span>
           </p>
         </div>
@@ -57,8 +57,8 @@ const Projects = () => {
             {projects?.map((pro: any) => (
               <div key={pro._id} className="p-4 ">
 
-                <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-500 overflow-hidden hover:scale-105 transform">
-                  <div className="w-full h-48 overflow-hidden">
+                <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow  overflow-hidden  transform">
+                  <div className="w-full h-48 overflow-hidden duration-1000">
                     <img
                       src={pro.image}
                       alt={pro.title}

@@ -9,9 +9,9 @@ import './AboutMe.css'; // for animated border
 const AboutMe = () => {
   return (
     <div id="about" className="exo-2  py-16">
-      <div className="max-w-6xl mx-auto px-2">
+      <div className="max-w-6xl mx-auto px-2 lg:px-4">
         <div className="flex justify-center items-center">
-          <p className="exo-2 border-b-2 w-48 text-[40px] text-center font-semibold text-white dark:text-gray-700">
+          <p className="exo-2 border-b-2 w-40 lg:w-48 text-[32px]  lg:text-[40px] text-center font-semibold text-white dark:text-gray-700">
             About <span className="text-[#F86F03]">Me</span>
           </p>
         </div>

@@ -64,14 +64,14 @@ const Contacts = () => {
       />
       <div className=" max-w-6xl mx-auto  pb-16 ">
         <div className="flex justify-center items-center pb-6 ">
-          <p className="exo-2 border-b-2 w-64 text-[40px] text-center font-semibold text-white dark:text-gray-700">
+          <p className="exo-2 border-b-2 w-52 lg:w-64 text-[32px] lg:text-[40px] text-center font-semibold text-white dark:text-gray-700">
             Get in <span className="text-[#F86F03]"> Touch</span>
           </p>
         </div>
         <section className="py-6 dark:bg-gray-100 dark:text-gray-900">
           <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x ">
             <div className="py-6 md:py-0 md:px-6 *:text-white *:dark:text-gray-700">
-              <h1 className="text-4xl font-bold">Contact</h1>
+              <h1 className="text-2xl lg:text-4xl font-bold">Contact</h1>
               <p className="pt-2 pb-4">
                 Fill in the form to start a conversation
               </p>

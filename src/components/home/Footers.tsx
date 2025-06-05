@@ -125,7 +125,7 @@ const Footers = () => {
           </div>
         </div>
       </footer>
-      <hr className="w-[1150px] mx-auto dark:text-gray-700" />
+      <hr className="max-w-[1150px] mx-auto dark:text-gray-700" />
       <div className="py-6 text-sm text-center dark:text-gray-700 ">
         © 2025. All rights reserved by Anuwarul Kabir.
       </div>

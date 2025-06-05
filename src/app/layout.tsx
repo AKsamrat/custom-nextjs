@@ -38,7 +38,11 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar session={session}></Navbar>
+        <Navbar
+          session={session}>
+
+        </Navbar>
+
         <div>
           {children}
           <ToastContainer position="top-right" autoClose={3000} />

@@ -59,17 +59,17 @@ const Education = () => {
   return (
     <div id="education" className="py-12  relative">
       <Image
-        src="/blur-23.svg"
+        src="/hero.svg"
         alt="Hero"
         width={1572}
-        height={900}
-        className="absolute -top-0 -z-10 h-full"
+        height={795}
+        className="absolute -top-[98px] -z-10"
       />
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-5">
         {/* Header */}
         <Slide direction="down" duration={800}>
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold text-white mb-3">
+            <h2 className="text-4xl font-bold text-white dark:text-gray-700 mb-3">
               Education <span className="text-[#F86F03]">&</span> Experience
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#F86F03] to-orange-400 mx-auto rounded-full"></div>
