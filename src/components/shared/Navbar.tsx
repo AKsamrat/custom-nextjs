@@ -32,7 +32,7 @@ export default function Navbar({ session }: { session: UserProps | null }) {
 
   return (
     <nav
-      className={`sticky top-0 z-[70] transition-colors duration-300 py-2 w-full overflow-x-hidden ${scrolled ? "bg-gray-900 shadow-md bg-opacity-85" : "bg-transparent"
+      className={`sticky top-0 z-[70] transition-colors duration-300 py-2 w-full overflow-x-hidden ${scrolled ? "bg-gray-900 shadow-md bg-opacity-95 text-white" : "bg-transparent"
         }`}
     >
       <div className="max-w-6xl mx-auto px-4 overflow-x-hidden">
@@ -110,7 +110,7 @@ export default function Navbar({ session }: { session: UserProps | null }) {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 border-t w-full overflow-x-hidden">
+        <div className="md:hidden  bg-gray-900  dark:bg-white border-t w-full overflow-x-hidden">
           <div className="flex flex-col space-y-3 p-4">
             {navLinks.map(({ href, label }) => (
               <Link
@@ -118,7 +118,7 @@ export default function Navbar({ session }: { session: UserProps | null }) {
                 href={href}
                 className={`transition ${pathname === href
                   ? "text-[#F86F03] font-bold"
-                  : "text-gray-700 dark:text-gray-200"
+                  : "text-gray-300 dark:text-gray-200"
                   }`}
               >
                 {label}

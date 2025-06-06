@@ -11,7 +11,7 @@ const certificates = [
   {
     id: 2,
     title: "Black Belt ",
-    image: "/Black Belt.png",
+    image: "/Black belt.png",
   },
   {
     id: 3,
@@ -80,7 +80,7 @@ export default function CertificateSection() {
                 alt={certificates[selected].title}
                 width={950}
                 height={600}
-                className="w-full object-contain rounded"
+                className="w-80 h-96 md:w-[700px] md:h-[950px] object-contain rounded"
               />
               <h3 className="text-center text-xl mt-4 font-semibold text-gray-800 dark:text-white">
                 {/* {certificates[selected].title} */}

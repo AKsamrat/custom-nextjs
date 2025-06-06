@@ -47,7 +47,7 @@ const Projects = () => {
     >
       <div className='max-w-6xl mx-auto px-4 lg:px-6'>
         <div className="flex justify-center items-center  pb-6">
-          <p className="exo-2 border-b-2 w-52 lg:w-60 text-[32px] lg:text-[40px] text-center font-semibold">
+          <p className="exo-2 border-b-2 w-52 lg:w-60 text-[32px] lg:text-[40px] text-center font-semibold text-white">
             My <span className="text-[#F86F03]"> Projects</span>
           </p>
         </div>
@@ -55,10 +55,12 @@ const Projects = () => {
         <div className="max-w-7xl mx-auto px-4">
           <Slider {...settings}>
             {projects?.map((pro: any) => (
-              <div key={pro._id} className="p-4 ">
+              <div key={pro._id} className="p-4 h-full">
+                {/* Ensure full height and flex column */}
+                <div className="flex flex-col h-[380px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow overflow-hidden">
 
-                <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow  overflow-hidden  transform">
-                  <div className="w-full h-48 overflow-hidden duration-1000">
+                  {/* Image Section */}
+                  <div className="w-full h-48 overflow-hidden">
                     <img
                       src={pro.image}
                       alt={pro.title}
@@ -66,7 +68,8 @@ const Projects = () => {
                     />
                   </div>
 
-                  <div className="p-5">
+                  {/* Content Section */}
+                  <div className="flex flex-col flex-grow p-5">
                     <h3 className="text-lg font-bold text-gray-800 mb-2">{pro.title}</h3>
 
                     <p className="text-sm text-gray-600">
@@ -78,22 +81,25 @@ const Projects = () => {
                       <span className="text-indigo-500">{pro.backEnd}</span>
                     </p>
 
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={pro.link}
-                      className="inline-block w-full"
-                    >
-                      <button className="w-full bg-[#F86F03] hover:bg-[#e25c00] text-gray-900 font-semibold py-2 px-4 rounded-xl transition duration-300">
-                        Visit Project
-                      </button>
-                    </a>
+                    {/* Button pinned at bottom */}
+                    <div className="mt-auto">
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={pro.link}
+                        className="inline-block w-full"
+                      >
+                        <button className="w-full bg-[#F86F03] hover:bg-[#e25c00] text-gray-900 font-semibold py-2 px-4 rounded-xl transition duration-300">
+                          Visit Project
+                        </button>
+                      </a>
+                    </div>
                   </div>
                 </div>
-
               </div>
             ))}
           </Slider>
+
         </div>
       </div>
     </div>

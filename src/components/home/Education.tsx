@@ -69,7 +69,7 @@ const Education = () => {
         {/* Header */}
         <Slide direction="down" duration={800}>
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold text-white dark:text-gray-700 mb-3">
+            <h2 className="text-2xl lg:text-4xl font-bold text-white dark:text-gray-700 mb-3">
               Education <span className="text-[#F86F03]">&</span> Experience
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#F86F03] to-orange-400 mx-auto rounded-full"></div>
