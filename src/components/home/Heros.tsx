@@ -4,7 +4,7 @@ import { CiFacebook } from 'react-icons/ci';
 import { VscGithub } from 'react-icons/vsc';
 import { TiSocialLinkedinCircular } from 'react-icons/ti';
 import { BsTwitterX } from 'react-icons/bs';
-import { Roll, Slide } from 'react-awesome-reveal';
+import { Roll } from 'react-awesome-reveal';
 import { Typewriter } from 'react-simple-typewriter';
 import Image from 'next/image';
 
@@ -38,47 +38,47 @@ const Heros = () => {
         <Image
           src="/hero.svg"
           alt="Hero"
-          width={1572}
+          width={1200}
           height={795}
           className="absolute -top-[98px] -z-10"
         />
         <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8 sm:px-4">
           <div className="flex flex-col justify-start items-baseline  text-center rounded-sm  lg:text-left exo-2 space-y-1 w-full mt-16 ">
-            <Slide duration={1500} direction="left" delay={700}>
-              <h1 className="text-2xl font-semibold leading-none text-[#F86F03]">
-                Hi, Its me
-              </h1>
-              <p className="font-bold text-2xl lg:text-5xl text-white dark:text-gray-700 ">ANUWARUL KABIR </p>
-            </Slide>
-            <Slide duration={1500} direction="left" delay={1000}>
-              <p className="text-[22px] lg:text-[30px] w-full text-white dark:text-gray-700">
-                And I am A{' '}
-                <span className="text-[#F86F03]">
-                  {/* {text} */}
-                  <Typewriter
-                    cursor
-                    cursorStyle="_"
-                    cursorBlinking
-                    delaySpeed={1000}
-                    deleteSpeed={25}
-                    loop={0}
-                    typeSpeed={75}
-                    words={[
-                      'Jr.FULL Stack Developer',
-                      'MERN Developer',
-                      'PostGreSQL Developer',
-                    ]}
-                  />
-                </span>
-              </p>
-            </Slide>
-            <Slide duration={1500} direction="left" delay={1500}>
-              <p className="mt-2 mb-3 text-lg sm:mb-6 text-gray-400">
-                Your One-Stop Solution for Exceptional
-                <br />
-                Web Development Service
-              </p>
-            </Slide>
+            {/* <Slide duration={1500} direction="left" delay={700}> */}
+            <h1 className="text-2xl font-semibold leading-none text-[#F86F03]">
+              Hi, Its me
+            </h1>
+            <p className="font-bold text-2xl lg:text-5xl text-white dark:text-gray-700 ">ANUWARUL KABIR </p>
+            {/* </Slide> */}
+            {/* <Slide duration={1500} direction="left" delay={1000}> */}
+            <p className="text-[22px] lg:text-[30px] w-full text-white dark:text-gray-700">
+              And I am A{' '}
+              <span className="text-[#F86F03]">
+                {/* {text} */}
+                <Typewriter
+                  cursor
+                  cursorStyle="_"
+                  cursorBlinking
+                  delaySpeed={1000}
+                  deleteSpeed={25}
+                  loop={0}
+                  typeSpeed={75}
+                  words={[
+                    'Jr.FULL Stack Developer',
+                    'MERN Developer',
+                    'PostGreSQL Developer',
+                  ]}
+                />
+              </span>
+            </p>
+            {/* </Slide> */}
+            {/* <Slide duration={1500} direction="left" delay={1500}> */}
+            <p className="mt-2 mb-3 text-lg sm:mb-6 text-gray-400">
+              Your One-Stop Solution for Exceptional
+              <br />
+              Web Development Service
+            </p>
+            {/* </Slide> */}
 
             <div className="flex justify-start items-center gap-4 py-4 text-white ">
 

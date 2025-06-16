@@ -11,7 +11,7 @@ const AboutMe = () => {
     <div id="about" className="exo-2  py-16">
       <div className="max-w-6xl mx-auto px-2 lg:px-4">
         <div className="flex justify-center items-center">
-          <p className="exo-2 border-b-2 w-40 lg:w-48 text-[32px]  lg:text-[40px] text-center font-semibold text-white dark:text-gray-700">
+          <p className="exo-2 border-b-2 w-32 lg:w-48 text-[25px]  lg:text-[40px] text-center font-semibold text-white dark:text-gray-700">
             About <span className="text-[#F86F03]">Me</span>
           </p>
         </div>
@@ -28,7 +28,8 @@ const AboutMe = () => {
                 <Image
                   src={img}
                   alt="about"
-                  fill
+                  width={400}
+                  height={400}
                   className="object-cover rounded-full"
                 />
               </div>
@@ -38,11 +39,11 @@ const AboutMe = () => {
           {/* Text Section */}
           <div className="flex-1 mt-10 lg:mt-0">
             <Slide direction="right" duration={1800}>
-              <p className="text-3xl font-semibold text-white dark:text-gray-700">
+              <p className="text-2xl lg:text-3xl font-semibold text-white dark:text-gray-700">
                 Jr. Full Stack Developer
               </p>
-              <p className="text-xl pb-5 text-[#F86F03]">MERN & PostGreSQL</p>
-              <p className="text-[18px] pb-5 text-gray-400 leading-relaxed">
+              <p className="text-lg lg:text-xl pb-5 text-[#F86F03]">MERN & PostGreSQL</p>
+              <p className="text-[16px] lg:text-[18px] pb-5 text-gray-400 leading-relaxed">
                 My greatest passion is web development, which I’ve chosen as my
                 career. Iam always seeking innovative organizations that value
                 dedication and skill. I hold both BSc and MSc degrees in Computer

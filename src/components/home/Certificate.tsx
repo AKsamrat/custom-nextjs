@@ -39,9 +39,12 @@ export default function CertificateSection() {
         className="absolute -top-0 -z-10 h-full"
       />
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 dark:text-gray-800 text-white">
-          My <span className="text-[#F86F03]">Certificates</span>
-        </h2>
+        <div className="flex justify-center">
+
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-10 dark:text-gray-800 text-white border-white border-b-2 w-44 lg:w-64 ">
+            My <span className="text-[#F86F03]">Certificates</span>
+          </h2>
+        </div>
 
         {/* Auto Sliding Container */}
         <div className="relative overflow-hidden">

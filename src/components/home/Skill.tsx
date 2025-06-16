@@ -31,7 +31,7 @@ const Skill = () => {
 
   const renderHeader = () => (
     <div className="flex justify-center items-center">
-      <p className="exo-2 border-b-2 w-36 lg:w-48 text-white text-[32px] lg:text-[40px] text-center font-semibold dark:text-gray-700">
+      <p className="exo-2 border-b-2 w-28 lg:w-48 text-white text-[25px] lg:text-[40px] text-center font-semibold dark:text-gray-700">
         My <span className="text-[#F86F03]">Skills</span>
       </p>
     </div>

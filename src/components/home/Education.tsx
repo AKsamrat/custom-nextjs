@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import { Slide } from 'react-awesome-reveal';
+import { Fade, Slide } from 'react-awesome-reveal';
 import { PiDownloadFill, PiGraduationCapFill, PiBriefcaseFill, PiCalendarFill, PiMapPinFill } from 'react-icons/pi';
 
 const Education = () => {
@@ -32,6 +32,17 @@ const Education = () => {
   ];
 
   const experienceData = [
+    {
+      position: "Frontend Developer",
+      company: "ADM Education & Welfare Society",
+      period: "09.09.2024 - 09.12.2024",
+      location: "India",
+      responsibilities: [
+        "Collaborated with cross-functional teams to initiate and manage frontend project workflows.",
+        "Liaised with stakeholders to gather requirements and ensure alignment with project goals.",
+        "Monitored frontend development progress to ensure timely delivery and adherence to quality standards."
+      ]
+    },
     {
       position: "Planning Officer",
       company: "Tazbid Al Owarichu Trade Corporation",
@@ -67,7 +78,7 @@ const Education = () => {
       />
       <div className="max-w-6xl mx-auto px-5">
         {/* Header */}
-        <Slide direction="down" duration={800}>
+        <Slide direction="down" duration={1500}>
           <div className="text-center mb-10">
             <h2 className="text-2xl lg:text-4xl font-bold text-white dark:text-gray-700 mb-3">
               Education <span className="text-[#F86F03]">&</span> Experience
@@ -78,7 +89,7 @@ const Education = () => {
 
 
 
-        <Slide direction="up" duration={1000}>
+        <Slide direction="up" duration={1500}>
           <div className="flex justify-center mb-8">
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-full p-4 border border-slate-700">
               <button
@@ -111,7 +122,7 @@ const Education = () => {
 
             {/* Education Tab */}
             {activeTab === 'education' && (
-              <Slide direction="right" duration={800}>
+              <Fade cascade damping={0.5} delay={500}>
                 <div className=" grid grid-cols-1 lg:grid-cols-2 gap-5">
                   {educationData.map((edu, index) => (
                     <div
@@ -140,14 +151,14 @@ const Education = () => {
                     </div>
                   ))}
                 </div>
-              </Slide>
+              </Fade>
             )}
           </div>
           <div>
 
             {/* Experience Tab */}
             {activeTab === 'experience' && (
-              <Slide direction="left" duration={800}>
+              <Fade duration={1500}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                   {experienceData.map((exp, index) => (
                     <div
@@ -185,7 +196,7 @@ const Education = () => {
                     </div>
                   ))}
                 </div>
-              </Slide>
+              </Fade>
             )}
           </div>
 
@@ -195,7 +206,7 @@ const Education = () => {
         {/* Tab Navigation */}
 
         {/* Download CV Button */}
-        <Slide direction="up" duration={1000}>
+        <Slide direction="up" duration={1500}>
           <div className="flex justify-center mt-10">
             <a
               target="_blank"

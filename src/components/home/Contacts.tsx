@@ -3,7 +3,7 @@
 import { AnimationProps } from '@/types';
 import Image from 'next/image';
 import React from 'react';
-import { Fade, Slide } from 'react-awesome-reveal';
+import { Fade } from 'react-awesome-reveal';
 import { Roll } from 'react-awesome-reveal';
 import { BsTwitterX } from 'react-icons/bs';
 import { CiFacebook } from 'react-icons/ci';
@@ -64,7 +64,7 @@ const Contacts = () => {
       />
       <div className=" max-w-6xl mx-auto  pb-16 ">
         <div className="flex justify-center items-center pb-6 ">
-          <p className="exo-2 border-b-2 w-52 lg:w-64 text-[32px] lg:text-[40px] text-center font-semibold text-white dark:text-gray-700">
+          <p className="exo-2 border-b-2 w-36 lg:w-64 text-[25px] lg:text-[40px] text-center font-semibold text-white dark:text-gray-700">
             Get in <span className="text-[#F86F03]"> Touch</span>
           </p>
         </div>
@@ -75,7 +75,7 @@ const Contacts = () => {
               <p className="pt-2 pb-4">
                 Fill in the form to start a conversation
               </p>
-              <div className="space-y-4 *:text-[20px]">
+              <div className="space-y-4 *:text-[16px] md:*:text-[20px]">
                 <Fade duration={2000}>
                   <p className="flex items-center">
                     <svg
@@ -143,7 +143,11 @@ const Contacts = () => {
               onSubmit={handleSubmit}
               className="flex flex-col py-6 space-y-6  md:py-0 md:px-6 *:dark:text-gray-700"
             >
-              <Slide duration={1000} direction='right'>
+              <Fade direction="up" // or "left", "right", "down"
+                duration={2000} // in milliseconds
+                delay={200}     // optional delay
+                triggerOnce     // animates only once when in view
+                cascade   >
                 <label className="block ">
                   <span className="mb-1 text-[18px] text-white dark:text-gray-700 ">Full name</span>
                   <input
@@ -153,8 +157,8 @@ const Contacts = () => {
                     className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 bg-[#43366A] dark:bg-gray-200 py-3 pl-2"
                   />
                 </label>
-              </Slide>
-              <Slide duration={1000} direction="right" >
+              </Fade>
+              <Fade duration={1000}  >
                 <label className="block">
                   <span className="mb-1 text-[18px] text-white dark:text-gray-700">Email address</span>
                   <input
@@ -165,8 +169,8 @@ const Contacts = () => {
                     data-temp-mail-org="0"
                   />
                 </label>
-              </Slide>
-              <Slide duration={1000} direction="right" >
+              </Fade>
+              <Fade duration={1000}  >
                 <label className="block">
                   <span className="mb-1 text-[18px] text-white dark:text-gray-700">Message</span>
                   <textarea
@@ -175,8 +179,8 @@ const Contacts = () => {
                     className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-200 py-3 pl-2 bg-[#43366A]"
                   ></textarea>
                 </label>
-              </Slide>
-              <Slide duration={1000} direction="right" >
+              </Fade>
+              <Fade duration={1000}  >
                 <button
                   type="submit"
                   className=" bg-[#F86F03] px-2 py-2 rounded-2xl font-semibold text-xl w-full "
@@ -184,7 +188,7 @@ const Contacts = () => {
                   {' '}
                   Submit
                 </button>
-              </Slide>
+              </Fade>
             </form>
           </div>
         </section>

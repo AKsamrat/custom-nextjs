@@ -43,17 +43,17 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="featured-item exo-2 bg-fixed bg-center bg-no-repeat bg-cover text-black py-16 "
+      className=" exo-2 bg-fixed bg-center bg-no-repeat bg-cover text-black pt-10"
     >
       <div className='max-w-6xl mx-auto px-4 lg:px-6'>
         <div className="flex justify-center items-center  pb-6">
-          <p className="exo-2 border-b-2 w-52 lg:w-60 text-[32px] lg:text-[40px] text-center font-semibold text-white">
+          <p className="exo-2 border-b-2 w-36  lg:w-60 text-[25px] lg:text-[40px] text-center font-semibold text-white">
             My <span className="text-[#F86F03]"> Projects</span>
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4">
-          <Slider {...settings}>
+        <div className="max-w-7xl mx-auto px-4 relative">
+          <Slider {...settings} className="text-white" >
             {projects?.map((pro: any) => (
               <div key={pro._id} className="p-4 h-full">
                 {/* Ensure full height and flex column */}
