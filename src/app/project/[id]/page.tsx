@@ -1,9 +1,9 @@
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-
-import Image from 'next/image';
-import { AiFillLike } from 'react-icons/ai';
-import { FaCalendar } from 'react-icons/fa';
+import Image from "next/image";
+import { AiFillLike } from "react-icons/ai";
+import { FaCalendar } from "react-icons/fa";
 
 // Format date helper
 const formatDate = (dateString: string) => {
@@ -16,69 +16,79 @@ const formatDate = (dateString: string) => {
 };
 
 const DetailsPage = async ({ params }: any) => {
-  const { id } = params;
+  const { id } = await params;
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/project/${id}`);
   const pBlog = await res.json();
   const blog: any = pBlog.data;
 
   return (
-    <div className="max-w-4xl mx-auto p-6 mt-10 bg-white rounded-3xl shadow-xl">
-      <div className="mb-6">
+    <div className="max-w-5xl mx-auto p-6 mt-12 bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl">
+
+      {/* Image */}
+      <div className="overflow-hidden rounded-2xl mb-6">
         <img
           src={blog.image}
           alt="Blog"
-          className="w-full h-[400px] object-cover rounded-2xl shadow-md"
+          className="w-full h-[400px] object-cover transition-transform duration-500 hover:scale-105"
         />
       </div>
 
-
       {/* Title */}
-      <h1 className="text-4xl font-bold text-center text-gray-800 mb-6">
+      <h1 className="text-4xl font-bold text-center text-white mb-4 leading-snug">
         {blog.title}
       </h1>
 
       {/* Author */}
-      <div className="flex justify-center items-center gap-3 mb-6 bg-gray-100 py-3 px-5 rounded-xl">
+      <div className="flex justify-center items-center gap-3 mb-6">
         <Image
           src="https://cdn-icons-png.flaticon.com/512/219/219986.png"
-          width={32}
-          height={32}
+          width={36}
+          height={36}
           alt="author"
           className="rounded-full"
         />
-        <p className="text-lg font-semibold text-gray-700">{blog.author_name}</p>
+        <p className="text-lg text-gray-300 font-semibold">{blog.author_name}</p>
       </div>
 
-      {/* Blog Image */}
-      {/* Date Badge */}
-      <div className="flex justify-center mb-4">
-        <span className="flex items-center gap-2 text-teal-600 bg-teal-100 px-4 py-1 rounded-full text-sm font-medium">
-          <FaCalendar />
-          {formatDate(blog.createdAt)}
+      {/* Date */}
+      <div className="flex justify-center mb-6">
+        <span className="flex items-center gap-2 text-teal-300 bg-teal-700/20 px-4 py-1 rounded-full text-sm font-medium shadow-sm">
+          <FaCalendar /> {formatDate(blog.createdAt)}
         </span>
       </div>
 
       {/* Description */}
-      <div className="text-gray-700 text-lg leading-relaxed mb-6">
-        <p className="text-justify">{blog.description}</p>
+      <div className="text-gray-200 text-base leading-relaxed mb-8 text-justify px-2">
+        <p>{blog.description}</p>
       </div>
 
-      {/* Tech Stack & Likes */}
-      <div className="grid sm:grid-cols-3 gap-4 text-gray-800 text-base">
-        <div className="flex items-center gap-2">
-          <AiFillLike className="text-teal-500" />
-          <span className="font-medium">Likes</span>
+      {/* Tech Stack + Likes */}
+      <div className="grid sm:grid-cols-3 gap-4 text-white mb-8 px-2">
+        <div className="flex items-center gap-2 text-sm">
+          <AiFillLike className="text-teal-400 text-lg" />
+          <span>{blog?.category} Likes</span>
         </div>
         <div>
-          <span className="font-medium text-gray-700">Frontend:</span>{" "}
-          <span className="text-indigo-500">{blog?.frontEnd}</span>
+          <span className="text-gray-300 font-medium">Frontend:</span>{" "}
+          <span className="text-teal-400">{blog?.frontEnd}</span>
         </div>
         <div>
-          <span className="font-medium text-gray-700">Backend:</span>{" "}
-          <span className="text-indigo-500">{blog?.backEnd}</span>
+          <span className="text-gray-300 font-medium">Backend:</span>{" "}
+          <span className="text-teal-400">{blog?.backEnd}</span>
         </div>
       </div>
-      <a href={blog?.link} className=' text-teal-600 bg-teal-100 px-4 py-1 rounded-full text-sm font-medium' >Visit Site</a>
+
+      {/* Visit Button */}
+      <div className="text-center">
+        <a
+          href={blog?.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-[#F86F03] hover:bg-[#dd4f00] text-white font-medium px-6 py-2 rounded-full shadow-lg transition"
+        >
+          🚀 Visit Project Site
+        </a>
+      </div>
     </div>
   );
 };

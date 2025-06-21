@@ -4,7 +4,7 @@ import React from 'react';
 import { Slide } from 'react-awesome-reveal';
 import { motion } from 'framer-motion';
 import img from '../../../public/portfolio.jpg';
-import types from '../../../public/typescript.webp';
+// import types from '../../../public/typescript.webp';
 import './AboutMe.css'; // for animated border
 // import CirclesOrbiting from './CircleOrbiting';
 
@@ -47,7 +47,7 @@ const AboutMe = () => {
               initial={{ x: -50, y: -50, opacity: 0 }}
               animate={{ x: 0, y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute -top-6 -left-6 md:top-12 md:-left-2 w-10 h-10 md:w-14 md:h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition-transform duration-200 cursor-pointer z-20"
+              className="absolute top-12 -left-4 md:top-12 md:-left-2 w-12 h-12 md:w-14 md:h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition-transform duration-200 cursor-pointer z-20"
             >
               <div className="text-blue-600 font-bold text-lg md:text-xl">
                 <img
@@ -55,7 +55,7 @@ const AboutMe = () => {
                   // alt="typescript"
                   // width={50}
                   // height={50}
-                  className='w-12 h-12'
+                  className='w-10 h-10 md:w-12 md:h-12'
                 />
 
               </div>
@@ -66,7 +66,7 @@ const AboutMe = () => {
               initial={{ x: 50, y: -50, opacity: 0 }}
               animate={{ x: 0, y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="absolute -top-6 -right-6 md:top-12 md:-right-2 w-16 h-16 md:w-14 md:h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition-transform duration-200 cursor-pointer z-20"
+              className="absolute top-12 -right-4 md:top-12 md:-right-2 w-12 h-12 md:w-14 md:h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition-transform duration-200 cursor-pointer z-20"
             >
               <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
                 <img src="./postgresql.png" alt="" />
@@ -78,7 +78,7 @@ const AboutMe = () => {
               initial={{ x: -50, y: 50, opacity: 0 }}
               animate={{ x: 0, y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="absolute -bottom-6 -left-6 md:bottom-12 md:-left-2 w-16 h-16 md:w-14 md:h-14 bg-black rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition-transform duration-200 cursor-pointer z-20"
+              className="absolute bottom-12 -left-6 md:bottom-12 md:-left-2 w-12 h-12 md:w-14 md:h-14 bg-black rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition-transform duration-200 cursor-pointer z-20"
             >
               <div className="text-white font-bold text-lg md:text-xl">
                 <img src="./next js.jpg" alt="" />

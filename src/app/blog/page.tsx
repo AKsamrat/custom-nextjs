@@ -8,7 +8,7 @@ const BlogPage = async () => {
   const blogs: any = await res.json();
   console.log("blog data", blogs)
   return (
-    <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-7 py-8 max-w-7xl mx-auto'>
+    <div className='grid grid-cols-1 md:grid-cols-3  gap-7 py-8 max-w-7xl mx-auto'>
       {
         blogs?.data?.map((blog: Blog) => (
           <LatestBlogCard key={blog._id} blog={blog}>

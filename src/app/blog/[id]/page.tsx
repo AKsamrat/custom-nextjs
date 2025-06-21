@@ -1,51 +1,84 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import { Blog } from "@/types";
+
 import Image from "next/image";
 import { AiFillLike } from "react-icons/ai";
 import { FaCalendar } from "react-icons/fa";
 
+// Date formatting helper
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
 
 const BlogDetails = async ({ params }: any) => {
-  const { id }: any = params;
-  // console.log(id)
+  const { id } = await params;
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/blog/${id}`);
-  const blog: any = await res.json();
-  console.log(blog)
-  return (
-    <div className="w-2/3 bg-white shadow-lg rounded-lg mx-auto p-6 mt-6">
-      <p className="flex items-center justify-center mx-auto text-teal-500 bg-teal-100 w-fit px-3 py-1 rounded-full">
-        <FaCalendar className="mr-2" />
-        {blog?.data?.createdAt}
-      </p>
-      <h2 className="text-center text-4xl font-semibold my-5">{blog?.data?.title}</h2>
-      <div className="flex items-center justify-center bg-gray-100 mb-5 py-2 rounded-lg gap-2">
-        {/* <Image
-          src="https://cdn-icons-png.flaticon.com/512/219/219986.png"
-          width={30}
-          height={30}
-          alt="author image"
-        /> */}
+  const blogData = await res.json();
+  const blog = blogData?.data;
 
-        <span className="text-lg font-medium"></span>
-      </div>
-      <figure className="mb-5">
-        <Image
-          src={`${blog?.data?.image}`}
-          width={600}
-          height={100}
-          alt="blog image"
-          className="h-96 w-full object-cover"
-        />
-      </figure>
-      <div className="text-gray-700 text-lg leading-relaxed">
-        <p className="text-justify text-gray-500">{blog?.data?.description}</p>
-      </div>
-      <div className="flex justify-between items-center mt-5">
-        <div className="flex items-center text-xl text-gray-600">
-          <AiFillLike className="text-teal-500 mr-2" />
-          <span className="mr-1">{blog?.data?.category}</span>
-          Likes
+  return (
+    <div className="max-w-4xl mx-auto mt-12 px-4 sm:px-6 lg:px-8">
+      <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl shadow-xl p-6 text-white">
+
+        {/* Date */}
+        <div className="flex justify-center mb-4">
+          <span className="flex items-center gap-2 text-teal-300 bg-teal-700/20 px-4 py-1 rounded-full text-sm font-medium">
+            <FaCalendar /> {formatDate(blog?.createdAt)}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h2 className="text-center text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">
+          {blog?.title}
+        </h2>
+
+        {/* Author */}
+        <div className="flex justify-center items-center gap-3 mb-6">
+          <Image
+            src="https://cdn-icons-png.flaticon.com/512/219/219986.png"
+            width={36}
+            height={36}
+            alt="author"
+            className="rounded-full"
+          />
+          <span className="text-base font-medium text-gray-200">
+            {blog?.author_name || "Author"}
+          </span>
+        </div>
+
+        {/* Blog Image */}
+        <figure className="rounded-2xl overflow-hidden mb-6 shadow-lg">
+          <Image
+            src={blog?.image}
+            alt="Blog"
+            width={800}
+            height={400}
+            className="w-full h-[400px] object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </figure>
+
+        {/* Description */}
+        <div className="text-gray-300 text-lg leading-relaxed text-justify mb-6">
+          <p>{blog?.description}</p>
+        </div>
+
+        {/* Likes & Category */}
+        <div className="flex items-center justify-between pt-4 border-t border-white/10">
+          <div className="flex items-center text-teal-300 gap-2 text-sm">
+            <AiFillLike className="text-xl" />
+            Likes
+          </div>
+          <p className="text-teal-300">
+            <span className="text-white">
+              Category:
+            </span>
+            {blog?.category}
+          </p>
         </div>
       </div>
     </div>

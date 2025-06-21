@@ -57,45 +57,46 @@ const Projects = () => {
             {projects?.map((pro: any) => (
               <div key={pro._id} className="p-4 h-full">
                 {/* Ensure full height and flex column */}
-                <div className="flex flex-col h-[380px] bg-[#180b2aa1] rounded-2xl shadow-md hover:shadow-xl transition-shadow overflow-hidden border-[#53377abd] border-[1px]">
+                <div className="flex flex-col h-[400px] bg-white/10 backdrop-blur-md border border-white/10 shadow-lg hover:shadow-orange-500/30 transition-shadow duration-300 rounded-3xl overflow-hidden group">
 
                   {/* Image Section */}
-                  <div className="w-full h-48 overflow-hidden p-2 rounded-2xl">
+                  <div className="relative w-full h-48 overflow-hidden">
                     <img
                       src={pro.image}
                       alt={pro.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 rounded-t-2xl"
+                      className="w-full h-full object-cover rounded-t-3xl transform transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-300"></div>
                   </div>
 
                   {/* Content Section */}
-                  <div className="flex flex-col flex-grow p-5">
-                    <h3 className="text-lg font-bold text-gray-100 mb-2">{pro.title}</h3>
+                  <div className="flex flex-col flex-grow px-6 py-4 space-y-2 text-white">
+                    <h3 className="text-xl font-semibold tracking-wide text-[#F86F03]">{pro.title}</h3>
 
-                    <p className="text-sm text-gray-200">
+                    <div className="text-sm text-gray-300">
                       <span className="font-medium text-gray-200">Frontend:</span>{" "}
-                      <span className="text-gray-400">{pro.frontEnd}</span>
-                    </p>
-                    <p className="text-sm text-gray-200 mb-4">
+                      {pro.frontEnd}
+                    </div>
+                    <div className="text-sm text-gray-300">
                       <span className="font-medium text-gray-200">Backend:</span>{" "}
-                      <span className="text-gray-400">{pro.backEnd}</span>
-                    </p>
+                      {pro.backEnd}
+                    </div>
 
-                    {/* Button pinned at bottom */}
-                    <div className="mt-auto">
+                    <div className="mt-auto pt-4">
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
                         href={pro.link}
-                        className="inline-block w-full"
+                        className="block w-full"
                       >
-                        <button className="w-full bg-[#F86F03] hover:bg-[#e25c00] text-gray-900 font-semibold py-2 px-4 rounded-xl transition duration-300">
-                          Visit Project
+                        <button className="w-full bg-[#F86F03] hover:bg-[#dd4f00] text-white font-medium py-2 px-4 rounded-2xl shadow-lg hover:shadow-[#F86F03]/50 transition">
+                          🚀 Visit Project
                         </button>
                       </a>
                     </div>
                   </div>
                 </div>
+
               </div>
             ))}
           </Slider>
