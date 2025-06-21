@@ -1,4 +1,5 @@
 "use client";
+
 import { Skills } from "@/types";
 import { getAllSkill } from "@/util/skill";
 import Image from "next/image";
@@ -47,6 +48,33 @@ const Skill = () => {
     />
   );
 
+  const renderMarquee = (reverse = false) => (
+    <div
+      className={`overflow-hidden whitespace-nowrap ${reverse ? "[--direction:reverse]" : ""
+        }`}
+    >
+      <div
+        className="inline-flex animate-slide gap-6 [animation-duration:30s]"
+        style={{ animationDirection: reverse ? "reverse" : "normal" }}
+      >
+        {skills.map((skill) => (
+          <GlowCard key={skill._id} identifier={`skill-${skill._id}`}>
+            <div className="p-4 rounded-2xl flex flex-col items-center gap-4 dark:bg-gray-800 w-40">
+              <img
+                className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                src={skill.image}
+                alt={skill.title || "skill"}
+              />
+              <p className="text-base sm:text-lg font-semibold">
+                {skill.title}
+              </p>
+            </div>
+          </GlowCard>
+        ))}
+      </div>
+    </div>
+  );
+
   if (loading) {
     return (
       <div id="skill" className="exo-2 relative mt-10">
@@ -92,38 +120,9 @@ const Skill = () => {
         <div className="max-w-6xl mx-auto pb-16 px-4 sm:px-4">
           {renderHeader()}
 
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pt-10">
-            {skills.length > 0 ? (
-              skills.map((skill: Skills) => (
-                <GlowCard key={skill?._id} identifier={`experience-${skill._id}`}>
-                  <div className="relative p-[2px] w-full">
-                    <Image
-                      src="/blur-23.svg"
-                      alt="skill"
-                      width={1080}
-                      height={200}
-                      className="absolute bottom-0 opacity-80"
-                    />
-                    <div className="p-4 rounded-2xl flex items-center gap-4  dark:bg-gray-800">
-                      <img
-                        className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                        src={skill?.image}
-                        alt={skill?.title || "skill"}
-                        width={56}
-                        height={56}
-                      />
-                      <p className="text-base sm:text-lg font-semibold">
-                        {skill?.title}
-                      </p>
-                    </div>
-                  </div>
-                </GlowCard>
-              ))
-            ) : (
-              <div className="col-span-full text-center text-gray-400">
-                No skills data available
-              </div>
-            )}
+          <div className="mt-10 space-y-10">
+            {renderMarquee(false)}
+            {renderMarquee(true)}
           </div>
         </div>
       </section>

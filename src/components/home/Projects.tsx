@@ -57,28 +57,28 @@ const Projects = () => {
             {projects?.map((pro: any) => (
               <div key={pro._id} className="p-4 h-full">
                 {/* Ensure full height and flex column */}
-                <div className="flex flex-col h-[380px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow overflow-hidden">
+                <div className="flex flex-col h-[380px] bg-[#180b2aa1] rounded-2xl shadow-md hover:shadow-xl transition-shadow overflow-hidden border-[#53377abd] border-[1px]">
 
                   {/* Image Section */}
-                  <div className="w-full h-48 overflow-hidden">
+                  <div className="w-full h-48 overflow-hidden p-2 rounded-2xl">
                     <img
                       src={pro.image}
                       alt={pro.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 rounded-t-2xl"
                     />
                   </div>
 
                   {/* Content Section */}
                   <div className="flex flex-col flex-grow p-5">
-                    <h3 className="text-lg font-bold text-gray-800 mb-2">{pro.title}</h3>
+                    <h3 className="text-lg font-bold text-gray-100 mb-2">{pro.title}</h3>
 
-                    <p className="text-sm text-gray-600">
-                      <span className="font-medium text-gray-700">Frontend:</span>{" "}
-                      <span className="text-indigo-500">{pro.frontEnd}</span>
+                    <p className="text-sm text-gray-200">
+                      <span className="font-medium text-gray-200">Frontend:</span>{" "}
+                      <span className="text-gray-400">{pro.frontEnd}</span>
                     </p>
-                    <p className="text-sm text-gray-600 mb-4">
-                      <span className="font-medium text-gray-700">Backend:</span>{" "}
-                      <span className="text-indigo-500">{pro.backEnd}</span>
+                    <p className="text-sm text-gray-200 mb-4">
+                      <span className="font-medium text-gray-200">Backend:</span>{" "}
+                      <span className="text-gray-400">{pro.backEnd}</span>
                     </p>
 
                     {/* Button pinned at bottom */}
@@ -107,3 +107,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

@@ -127,9 +127,9 @@ const Education = () => {
                   {educationData.map((edu, index) => (
                     <div
                       key={index}
-                      className="group relative bg-slate-800/60 border-l-4 border-[#F86F03] rounded-lg p-6 hover:bg-slate-700/60 transition-all duration-300 hover:shadow-lg hover:shadow-[#F86F03]/10"
+                      className="group relative bg-[#180b2aa1] border-l-4 border-[#F86F03] rounded-lg  hover:bg-[#221338c9] transition-all duration-300 hover:shadow-lg hover:shadow-[#F86F03]/10"
                     >
-                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between border-[#53377abd] border-[1px] p-6 rounded-lg h-full">
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-2">
                             <span className="px-2 py-1 bg-[#F86F03]/20 text-[#F86F03] text-xs font-medium rounded">
@@ -163,9 +163,9 @@ const Education = () => {
                   {experienceData.map((exp, index) => (
                     <div
                       key={index}
-                      className="group relative bg-slate-800/60 border-l-4 border-[#F86F03] rounded-lg p-6 hover:bg-slate-700/60 transition-all duration-300 hover:shadow-lg hover:shadow-[#F86F03]/10"
+                      className="group relative bg-[#180b2aa1] border-l-4 border-[#F86F03] rounded-lg  hover:bg-[#221338c9] transition-all duration-300 hover:shadow-lg hover:shadow-[#F86F03]/10"
                     >
-                      <div className="flex flex-col lg:flex-row lg:gap-8">
+                      <div className="flex flex-col lg:flex-row lg:gap-8 border-[#53377abd] border-[1px] p-6 rounded-lg h-full">
                         <div className="flex-1">
                           <div className="flex flex-wrap items-center gap-4 mb-3">
                             <div className="flex items-center gap-2 text-gray-400 text-sm">
