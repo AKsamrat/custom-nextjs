@@ -7,7 +7,7 @@ import { BsTwitterX } from 'react-icons/bs';
 import { Roll } from 'react-awesome-reveal';
 import { Typewriter } from 'react-simple-typewriter';
 import Image from 'next/image';
-
+import TechCursor from '../helper/TechCursor';
 import { AnimationProps } from '@/types';
 
 
@@ -208,6 +208,7 @@ const Heros = () => {
           </div>
         </div>
       </section>
+      <TechCursor></TechCursor>
     </div>
   );
 };

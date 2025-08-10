@@ -3,6 +3,8 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { PiDownloadFill, PiGraduationCapFill, PiBriefcaseFill, PiCalendarFill, PiMapPinFill } from 'react-icons/pi';
+import TechCursor from '../helper/TechCursor';
+
 
 const Education = () => {
   const [activeTab, setActiveTab] = useState('education');
@@ -218,6 +220,7 @@ const Education = () => {
                 Download CV
               </button>
             </a>
+            <TechCursor></TechCursor>
           </div>
         </Slide>
       </div>
