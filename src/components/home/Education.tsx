@@ -1,13 +1,18 @@
-'use client';
-import Image from 'next/image';
-import React, { useState } from 'react';
-import { Fade, Slide } from 'react-awesome-reveal';
-import { PiDownloadFill, PiGraduationCapFill, PiBriefcaseFill, PiCalendarFill, PiMapPinFill } from 'react-icons/pi';
-import TechCursor from '../helper/TechCursor';
-
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+import { Fade, Slide } from "react-awesome-reveal";
+import {
+  PiBriefcaseFill,
+  PiCalendarFill,
+  PiDownloadFill,
+  PiGraduationCapFill,
+  PiMapPinFill,
+} from "react-icons/pi";
+import TechCursor from "../helper/TechCursor";
 
 const Education = () => {
-  const [activeTab, setActiveTab] = useState('education');
+  const [activeTab, setActiveTab] = useState("education");
 
   const educationData = [
     {
@@ -15,22 +20,22 @@ const Education = () => {
       institution: "University of Asia Pacific",
       period: "2017 - 2018",
       location: "Dhaka, Bangladesh",
-      type: "Masters"
+      type: "Masters",
     },
     {
       degree: "BSc in Computer Science & Engineering",
       institution: "University of Asia Pacific",
       period: "2012 - 2016",
       location: "Dhaka, Bangladesh",
-      type: "Bachelor"
+      type: "Bachelor",
     },
     {
       degree: "Diploma In Computer",
       institution: "Sherpur Polytechnic Institute",
       period: "2007 - 2011",
       location: "Sherpur, Bangladesh",
-      type: "Diploma"
-    }
+      type: "Diploma",
+    },
   ];
 
   const experienceData = [
@@ -42,8 +47,8 @@ const Education = () => {
       responsibilities: [
         "Collaborated with cross-functional teams to initiate and manage frontend project workflows.",
         "Liaised with stakeholders to gather requirements and ensure alignment with project goals.",
-        "Monitored frontend development progress to ensure timely delivery and adherence to quality standards."
-      ]
+        "Monitored frontend development progress to ensure timely delivery and adherence to quality standards.",
+      ],
     },
     {
       position: "Planning Officer",
@@ -53,8 +58,8 @@ const Education = () => {
       responsibilities: [
         "Maintaining the order and start its procedural way",
         "Meet with the buyer and maintaining their jobs",
-        "Monitoring production and its delivery"
-      ]
+        "Monitoring production and its delivery",
+      ],
     },
     {
       position: "MIS Officer",
@@ -64,9 +69,9 @@ const Education = () => {
       responsibilities: [
         "Designing, monitoring, analyzing, and troubleshooting IT systems",
         "Maintaining, managing, and updating software",
-        "Supervising the development and maintenance of websites and ensuring the protection of users data"
-      ]
-    }
+        "Supervising the development and maintenance of websites and ensuring the protection of users data",
+      ],
+    },
   ];
 
   return (
@@ -89,27 +94,27 @@ const Education = () => {
           </div>
         </Slide>
 
-
-
         <Slide direction="up" duration={1500}>
           <div className="flex justify-center mb-8">
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-full p-4 border border-slate-700">
               <button
-                onClick={() => setActiveTab('education')}
-                className={`px-4 py-2.5 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${activeTab === 'education'
-                  ? 'bg-[#F86F03] text-white shadow-lg shadow-orange-500/25'
-                  : 'text-gray-300 hover:text-white hover:bg-slate-700/50'
-                  }`}
+                onClick={() => setActiveTab("education")}
+                className={`px-4 py-2.5 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
+                  activeTab === "education"
+                    ? "bg-[#F86F03] text-white shadow-lg shadow-orange-500/25"
+                    : "text-gray-300 hover:text-white hover:bg-slate-700/50"
+                }`}
               >
                 <PiGraduationCapFill className="text-lg" />
                 Education
               </button>
               <button
-                onClick={() => setActiveTab('experience')}
-                className={`px-4 py-2.5 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${activeTab === 'experience'
-                  ? 'bg-[#F86F03] text-white shadow-lg shadow-orange-500/25'
-                  : 'text-gray-300 hover:text-white hover:bg-slate-700/50'
-                  }`}
+                onClick={() => setActiveTab("experience")}
+                className={`px-4 py-2.5 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
+                  activeTab === "experience"
+                    ? "bg-[#F86F03] text-white shadow-lg shadow-orange-500/25"
+                    : "text-gray-300 hover:text-white hover:bg-slate-700/50"
+                }`}
               >
                 <PiBriefcaseFill className="text-lg" />
                 Experience
@@ -121,9 +126,8 @@ const Education = () => {
         {/* Content Area */}
         <div className="relative ">
           <div>
-
             {/* Education Tab */}
-            {activeTab === 'education' && (
+            {activeTab === "education" && (
               <Fade cascade damping={0.5} delay={500}>
                 <div className=" grid grid-cols-1 lg:grid-cols-2 gap-5">
                   {educationData.map((edu, index) => (
@@ -142,8 +146,12 @@ const Education = () => {
                               <span>{edu.period}</span>
                             </div>
                           </div>
-                          <h3 className="text-xl font-bold text-white mb-1">{edu.degree}</h3>
-                          <h4 className="text-lg text-gray-300 mb-2">{edu.institution}</h4>
+                          <h3 className="text-xl font-bold text-white mb-1">
+                            {edu.degree}
+                          </h3>
+                          <h4 className="text-lg text-gray-300 mb-2">
+                            {edu.institution}
+                          </h4>
                           <div className="flex items-center gap-2 text-gray-400 text-sm">
                             <PiMapPinFill className="text-[#F86F03]" />
                             <span>{edu.location}</span>
@@ -157,9 +165,8 @@ const Education = () => {
             )}
           </div>
           <div>
-
             {/* Experience Tab */}
-            {activeTab === 'experience' && (
+            {activeTab === "experience" && (
               <Fade duration={1500}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                   {experienceData.map((exp, index) => (
@@ -179,16 +186,27 @@ const Education = () => {
                               <span>{exp.location}</span>
                             </div>
                           </div>
-                          <h3 className="text-xl font-bold text-white mb-1">{exp.position}</h3>
-                          <h4 className="text-lg text-[#F86F03] font-semibold mb-4">{exp.company}</h4>
+                          <h3 className="text-xl font-bold text-white mb-1">
+                            {exp.position}
+                          </h3>
+                          <h4 className="text-lg text-[#F86F03] font-semibold mb-4">
+                            {exp.company}
+                          </h4>
 
                           <div>
-                            <h5 className="text-sm font-semibold text-gray-300 mb-2">Key Responsibilities:</h5>
+                            <h5 className="text-sm font-semibold text-gray-300 mb-2">
+                              Key Responsibilities:
+                            </h5>
                             <ul className="space-y-1">
                               {exp.responsibilities.map((resp, respIndex) => (
-                                <li key={respIndex} className="flex items-start gap-2 text-gray-400 text-sm">
+                                <li
+                                  key={respIndex}
+                                  className="flex items-start gap-2 text-gray-400 text-sm"
+                                >
                                   <span className="w-1.5 h-1.5 bg-[#F86F03] rounded-full mt-1.5 flex-shrink-0"></span>
-                                  <span className="leading-relaxed">{resp}</span>
+                                  <span className="leading-relaxed">
+                                    {resp}
+                                  </span>
                                 </li>
                               ))}
                             </ul>
@@ -201,9 +219,7 @@ const Education = () => {
               </Fade>
             )}
           </div>
-
         </div>
-
 
         {/* Tab Navigation */}
 
@@ -220,10 +236,10 @@ const Education = () => {
                 Download CV
               </button>
             </a>
-            <TechCursor></TechCursor>
           </div>
         </Slide>
       </div>
+      <TechCursor></TechCursor>
     </div>
   );
 };

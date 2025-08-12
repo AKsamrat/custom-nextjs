@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 interface TechImage {
   name: string;
@@ -18,14 +18,33 @@ interface Particle {
 }
 
 const icons: { name: string; src: string }[] = [
-  // replace with your image path that can no plm
-  { name: "JavaScript", src: "/js.png" },
-  { name: "TypeScript", src: "/typescript.webp" },
-  { name: "React", src: "/react.svg" },
-  { name: "Next.js", src: "/next js.jpg" },
-  { name: "POSTGRESQL", src: "/postgresql.png" },
-  { name: "CSS", src: "/css3.png" },
+  // replace with your image path
+  {
+    name: "JavaScript",
+    src: "https://res.cloudinary.com/dz1fy2tof/image/upload/v1755012752/js_nocitj.png",
+  },
+  {
+    name: "TypeScript",
+    src: "https://res.cloudinary.com/dz1fy2tof/image/upload/v1755012632/ts_elsqw8.png",
+  },
+  {
+    name: "React",
+    src: "https://res.cloudinary.com/dz1fy2tof/image/upload/v1755012941/react_ogt6ny.svg",
+  },
+  {
+    name: "Next.js",
+    src: "https://res.cloudinary.com/dz1fy2tof/image/upload/v1755012973/next_hrodnb.svg",
+  },
+  {
+    name: "HTML",
+    src: "https://res.cloudinary.com/dz1fy2tof/image/upload/v1755012812/html_xbcdkj.png",
+  },
+  {
+    name: "CSS",
+    src: "https://res.cloudinary.com/dz1fy2tof/image/upload/v1755012862/css_1_irojyc.png",
+  },
 ];
+
 const TechCursor = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
@@ -41,7 +60,7 @@ const TechCursor = () => {
             img.src = src;
             img.onload = () => resolve({ name, src, image: img });
           });
-        })
+        }),
       );
     };
 
@@ -96,7 +115,7 @@ const TechCursor = () => {
               this.x - this.size / 2,
               this.y - this.size / 2,
               this.size,
-              this.size
+              this.size,
             );
             ctx.globalAlpha = 1;
           },
